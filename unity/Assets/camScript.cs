@@ -9,15 +9,19 @@ public class camScript : MonoBehaviour {
 			birdsEye
 		}
 
-	public GameObject player;
+	GameObject player;
+	FPC controller;
 	public camView view;
 	public float mouseSensitivity = 2.0f;
 	float vertRot = 0;
-	public float upDownRange = 50.0f;
+	public float upDownRange = 40.0f;
+	Vector3 mouse;
+
 
 	void Start()
 	{
-
+		player = GameObject.Find ("Player");
+		controller = player.GetComponent<FPC> ();
 	}
 
 	void Update()
@@ -35,7 +39,7 @@ public class camScript : MonoBehaviour {
 		float yaw = Input.GetAxis ("Mouse X") * mouseSensitivity;
 		player.transform.Rotate (0, yaw, 0);
 		vertRot -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
-		// more shit about stuff
+
 		vertRot = Mathf.Clamp (vertRot, -upDownRange, upDownRange);
 		transform.localRotation = Quaternion.Euler (vertRot, 0, 0);
 	}
