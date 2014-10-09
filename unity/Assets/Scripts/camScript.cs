@@ -10,7 +10,7 @@ public class camScript : MonoBehaviour {
 		}
 
 	GameObject player;
-	FPC controller;
+	//FPC controller;
 	public camView view;
 	public float mouseSensitivity = 2.0f;
 	float vertRot = 0;
@@ -21,7 +21,7 @@ public class camScript : MonoBehaviour {
 	void Start()
 	{
 		player = GameObject.Find ("Player");
-		controller = player.GetComponent<FPC> ();
+//		controller = player.GetComponent<FPC> ();
 	}
 
 	void Update()
