@@ -25,7 +25,14 @@ public class FPC : MonoBehaviour {
 		charC = GetComponent<CharacterController> ();
 		player = this.gameObject;
 	}
-	
+
+	public void CanJump()
+	{
+		canJump = true;
+	}
+
+
+
 	// Update is called once per frame
 	void Update () 
 	{

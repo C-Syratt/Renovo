@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\FPC.cs" />
      <Compile Include="Assets\Scripts\camScript.cs" />
      <Compile Include="Assets\Scripts\pageManager.cs" />
+     <Compile Include="Assets\Tomes.cs" />
      <Compile Include="Assets\pageCam.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
