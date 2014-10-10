@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\EndTrigger.cs" />
+     <Compile Include="Assets\Scripts\DialPuzzle.cs" />
      <Compile Include="Assets\Scripts\FPC.cs" />
+     <Compile Include="Assets\Scripts\Tomes.cs" />
      <Compile Include="Assets\Scripts\camScript.cs" />
+     <Compile Include="Assets\Scripts\pageCam.cs" />
      <Compile Include="Assets\Scripts\pageManager.cs" />
-     <Compile Include="Assets\Tomes.cs" />
-     <Compile Include="Assets\pageCam.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
