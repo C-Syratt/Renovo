@@ -4,6 +4,7 @@ using System.Collections;
 public class pageManager : MonoBehaviour {
 
 	public pageCam pageCamManager;
+	public AudioClip voiceOver;
 
  	void Start()
 	{
@@ -14,13 +15,11 @@ public class pageManager : MonoBehaviour {
 	void OnTriggerEnter()
 	{
 		triggerFunc (gameObject.name);
-		print ("Yo bitch read now");
 	}
 
 	void OnTriggerExit()
 	{
 		triggerUnFunc (gameObject.name);
-		print ("stahp yo readin now");
 	}
 	
 	public void triggerFunc(string page)
@@ -29,18 +28,22 @@ public class pageManager : MonoBehaviour {
 		{
 		case "Page One":
 			pageCamManager.TurnCamOn(1); // Tell pageCam.cs to turn on Camera One
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
 			break;
 		
 		case "Page Two":
 			pageCamManager.TurnCamOn(2); // Tell pageCam.cs to turn on Camera Two
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
 			break;
 
 		case "Page Three":
 			pageCamManager.TurnCamOn(3); // Tell pageCam.cs to turn on Camera Three
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
 			break;
 
 		case "Page Four":
 			pageCamManager.TurnCamOn(4); // Tell pageCam.cs to turn on Camera Four
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
 			break;
 		}
 	}

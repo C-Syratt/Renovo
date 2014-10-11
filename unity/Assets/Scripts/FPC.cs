@@ -5,6 +5,7 @@ public class FPC : MonoBehaviour {
 
 
 	CharacterController charC;
+	//[SerializeField]AudioClip footsteps;
 	public GameObject player;
 	[SerializeField]camScript cam;
 	public bool canJump = false;
@@ -37,8 +38,10 @@ public class FPC : MonoBehaviour {
 	void Update () 
 	{
 		// increase velocity the longer you fall
-
-		vertVelo += Physics.gravity.y * Time.deltaTime;
+		if (!charC.isGrounded) 
+		{
+			vertVelo += Physics.gravity.y * Time.deltaTime;
+		}
 
 		// Jumping if the character is on the ground/player can not jump wile already in air
 		if (canJump == true) 
@@ -56,6 +59,21 @@ public class FPC : MonoBehaviour {
 		speed = new Vector3 (sideSpeed, vertVelo, forwardSpeed);
 		speed = transform.rotation * speed;
 		charC.Move (speed * Time.deltaTime);
+
+		if (!charC.isGrounded) 
+		{
+			audio.Stop();
+		}
+
+		if ((Input.GetButton("Horizontal") || Input.GetButton ("Vertical")) && !audio.isPlaying) 
+		{
+			audio.Play ();
+		}
+		else if ( !Input.GetButton( "Horizontal" ) && !Input.GetButton( "Vertical" ) && audio.isPlaying 
+		         && charC.isGrounded)
+		{
+			audio.Stop(); // or Pause()
+		}
 
 	}
 
