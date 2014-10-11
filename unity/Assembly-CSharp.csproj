@@ -46,8 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\EndTrigger.cs" />
      <Compile Include="Assets\Scripts\DialPuzzle.cs" />
+     <Compile Include="Assets\Scripts\EndTrigger.cs" />
      <Compile Include="Assets\Scripts\FPC.cs" />
      <Compile Include="Assets\Scripts\Tomes.cs" />
      <Compile Include="Assets\Scripts\camScript.cs" />

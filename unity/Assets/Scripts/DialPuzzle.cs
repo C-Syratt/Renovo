@@ -31,15 +31,6 @@ public class DialPuzzle : MonoBehaviour
 		if (Input.GetKeyDown (KeyCode.DownArrow))
 		{ChangeDown ();}
 
-//		if (selectedDial) 
-//		{
-//			selectedDial.renderer.material.color = selectedColor;
-//		}
-//		else
-//		{
-//			renderer.material.color = originalColor;
-//		}
-
 		selectedDial.renderer.material.color = selectedColor;
 
 		for (int i = 0; i < dialList.Length; i++) 
