@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class EndTrigger : MonoBehaviour {
+public class ComboTrigger : MonoBehaviour {
 
 	public List<GameObject> objInTrigger = new List<GameObject>();
 
@@ -27,12 +27,9 @@ public class EndTrigger : MonoBehaviour {
 		    objInTrigger.Contains (dial3)) 
 		{
 			correctCombo = true;
-			print ("WINNING!");
+			EndGame();
 		}
 	}
-
-
-
 
 	public void OnTriggerEnter(Collider other)
 	{
@@ -48,4 +45,11 @@ public class EndTrigger : MonoBehaviour {
 		GameObject go = other.gameObject;
 		objInTrigger.Remove(go);
 	}
+
+	void EndGame()
+	{
+		SendMessageUpwards ("Win");
+	}
+
+
 }

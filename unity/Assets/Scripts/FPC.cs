@@ -6,7 +6,8 @@ public class FPC : MonoBehaviour {
 	public enum playerState
 	{
 		game,
-		finale
+		finale,
+		grandFinale
 	}
 
 
@@ -26,7 +27,9 @@ public class FPC : MonoBehaviour {
 
 	public float moveSpeed = 5.0f;
 	public float jumpSpeed = 5.0f;
-	
+
+	float counter;
+	float t = 5;
 	float vertVelo = 0;
 
 	// Use this for initialization
@@ -45,12 +48,9 @@ public class FPC : MonoBehaviour {
 		canJump = true;
 	}
 
-
-
-	// Update is called once per frame
 	void Update () 
 	{
-		if(playState == playerState.game)
+		if(playState == playerState.game || playState == playerState.grandFinale)
 		{
 			// increase velocity the longer you fall
 			if (!charC.isGrounded) 
@@ -63,8 +63,8 @@ public class FPC : MonoBehaviour {
 			{
 				if (charC.isGrounded && Input.GetButtonDown ("Jump")) 
 				{
-				vertVelo = jumpSpeed;
-				//AudioSource.PlayClipAtPoint(jumpAud, gameObject.transform.position);
+					vertVelo = jumpSpeed;
+					//AudioSource.PlayClipAtPoint(jumpAud, gameObject.transform.position);
 				}
 			}
 
@@ -90,12 +90,28 @@ public class FPC : MonoBehaviour {
 				audio.Stop(); // or Pause()
 			}
 		}
+
+		if(playState == playerState.grandFinale)
+		{
+			counter += Time.deltaTime;
+			if(counter > t)
+			{
+				Win();
+			}
+		}
 	}
 
 	public void ActivateFinale()
 	{
 		playState = playerState.finale;
 		cam.changeView ();
+	}
+
+	void Win()
+	{
+		// Load the Level Again
+		cam.changeView ();
+		Application.LoadLevel(1);
 	}
 
 	public void TorchOn()

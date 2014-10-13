@@ -4,8 +4,19 @@ using System.Collections;
 public class FinalPuzzleCam : MonoBehaviour {
 
 	public GameObject finalCam;
+	public FPC player;
+
 
 	public GameObject[] text;
+
+	void Update()
+	{
+		if (player.playState == FPC.playerState.grandFinale)
+		{
+			DisableCam ();
+		}
+	}
+
 
 	void OnTriggerEnter(Collider col)
 	{
@@ -14,4 +25,13 @@ public class FinalPuzzleCam : MonoBehaviour {
 		text[1].SetActive (true);
 		col.SendMessage("ActivateFinale");
 	}
+
+	void DisableCam()
+	{
+		finalCam.SetActive (false);
+		text[0].SetActive (false);
+		text[1].SetActive (false);
+	}
+
+
 }

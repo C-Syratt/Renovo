@@ -58,7 +58,10 @@ public class camScript : MonoBehaviour {
 			view = camView.birdsEye;
 
 		else if (view == camView.birdsEye)
+		{
 			view = camView.thirdPerson;
+			print ("switch back");
+		}
 
 	}
 

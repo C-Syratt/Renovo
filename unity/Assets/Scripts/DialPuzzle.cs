@@ -17,6 +17,11 @@ public class DialPuzzle : MonoBehaviour
 	{
 		selectedDial = dialList[0];
 		originalColor = dialList[1].renderer.material.color;
+
+		for (int i = 0; i < dialList.Length; i++) 
+		{
+			dialList[i].gameObject.transform.Rotate(0, Random.Range(0,306),0);
+		}
 	}
 
 	public void Update()
@@ -83,6 +88,11 @@ public class DialPuzzle : MonoBehaviour
 			selectedDial = dialList [dialNum - 1];
 			dialNum--;
 		}
+	}
+
+	void Win()
+	{
+		player.playState = FPC.playerState.grandFinale;
 	}
 
 }
