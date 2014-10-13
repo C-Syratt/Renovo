@@ -45,6 +45,11 @@ public class pageManager : MonoBehaviour {
 			pageCamManager.TurnCamOn(4); // Tell pageCam.cs to turn on Camera Four
 			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
 			break;
+
+		case "Page Five":
+			pageCamManager.TurnCamOn(5); // Tell pageCam.cs to turn on Camera Four
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
+			break;
 		}
 	}
 
@@ -66,6 +71,10 @@ public class pageManager : MonoBehaviour {
 			
 		case "Page Four":
 			pageCamManager.TurnCamOff(4); // Tell pageCam.cs to turn off Camera Four
+			break;
+
+		case "Page Five":
+			pageCamManager.TurnCamOff(5); // Tell pageCam.cs to turn off Camera Four
 			break;
 		}
 	}

@@ -8,6 +8,7 @@ public class pageCam : MonoBehaviour
 	public GameObject camTwo;
 	public GameObject camThree;
 	public GameObject camFour;
+	public GameObject camFive;
 	
 	void Start()
 	{
@@ -30,6 +31,9 @@ public class pageCam : MonoBehaviour
 		case 4:
 			camFour.SetActive(true);
 			break;
+		case 5:
+			camFive.SetActive(true);
+			break;
 		}
 	}
 
@@ -48,6 +52,9 @@ public class pageCam : MonoBehaviour
 			break;
 		case 4:
 			camFour.SetActive(false);
+			break;
+		case 5:
+			camFive.SetActive(false);
 			break;
 		}
 	}

@@ -36,6 +36,8 @@ public class camScript : MonoBehaviour {
 
 	void ThirdPerson()
 	{
+		gameObject.GetComponent<Camera>().enabled = true;
+
 		float yaw = Input.GetAxis ("Mouse X") * mouseSensitivity;
 		player.transform.Rotate (0, yaw, 0);
 		vertRot -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
@@ -46,7 +48,7 @@ public class camScript : MonoBehaviour {
 
 	void BirdsEye()
 	{
-
+		gameObject.GetComponent<Camera>().enabled = false;
 	}
 
 

@@ -8,6 +8,8 @@ public class DialPuzzle : MonoBehaviour
 	public float rotSpeed;
 	public int dialNum = 0;
 
+	public FPC player;
+
 	public Color selectedColor;
 	public Color originalColor;
 
@@ -19,25 +21,28 @@ public class DialPuzzle : MonoBehaviour
 
 	public void Update()
 	{
-		if (Input.GetKey (KeyCode.LeftArrow))
-		{RotateLeft ();}
-
-		if (Input.GetKey (KeyCode.RightArrow))
-		{RotateRight ();}
-
-		if (Input.GetKeyDown (KeyCode.UpArrow))
-		{ChangeUp ();}
-
-		if (Input.GetKeyDown (KeyCode.DownArrow))
-		{ChangeDown ();}
-
-		selectedDial.renderer.material.color = selectedColor;
-
-		for (int i = 0; i < dialList.Length; i++) 
+		if(player.playState == FPC.playerState.finale)
 		{
-			if (i != dialNum)
+			if (Input.GetKey (KeyCode.LeftArrow))
+			{RotateLeft ();}
+
+			if (Input.GetKey (KeyCode.RightArrow))
+			{RotateRight ();}
+
+			if (Input.GetKeyDown (KeyCode.UpArrow))
+			{ChangeUp ();}
+
+			if (Input.GetKeyDown (KeyCode.DownArrow))
+			{ChangeDown ();}
+
+			selectedDial.renderer.material.color = selectedColor;
+
+			for (int i = 0; i < dialList.Length; i++) 
 			{
-				dialList[i].renderer.material.color = originalColor;
+				if (i != dialNum)
+				{
+					dialList[i].renderer.material.color = originalColor;
+				}
 			}
 		}
 	}

@@ -3,16 +3,20 @@ using System.Collections;
 
 public class Tomes : MonoBehaviour 
 {
+
+	[SerializeField]public string trigName;
+
 	void OnTriggerEnter(Collider col)
 	{
-		switch (gameObject.name)
+		switch (trigName)
 		{
-		case "Tome One":
+		case "Tome_1":
 			col.gameObject.SendMessage("CanJump");
 			break;
-		case "Tome Two":
+		case "Tome_2":
+			col.gameObject.SendMessage("SecondPuzzle");
 			break;
-		case "Tome Three":
+		case "Tome_3":
 			break;
 		}
 
