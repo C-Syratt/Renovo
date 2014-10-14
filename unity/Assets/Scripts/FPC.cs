@@ -98,6 +98,9 @@ public class FPC : MonoBehaviour {
 				Win();
 			}
 		}
+		if(Input.GetKeyDown(KeyCode.Escape))
+			Application.Quit();
+		
 	}
 
 	public void ActivateFinale()
