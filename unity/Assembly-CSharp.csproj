@@ -50,14 +50,15 @@
      <Compile Include="Assets\Scripts\DialPuzzle.cs" />
      <Compile Include="Assets\Scripts\FPC.cs" />
      <Compile Include="Assets\Scripts\FinalPuzzleCam.cs" />
+     <Compile Include="Assets\Scripts\MenuButtons.cs" />
+     <Compile Include="Assets\Scripts\MenuCam.cs" />
      <Compile Include="Assets\Scripts\SecondPuzzle.cs" />
      <Compile Include="Assets\Scripts\Tomes.cs" />
      <Compile Include="Assets\Scripts\camScript.cs" />
      <Compile Include="Assets\Scripts\pageCam.cs" />
      <Compile Include="Assets\Scripts\pageManager.cs" />
      <Compile Include="Assets\Scripts\text.cs" />
-     <Compile Include="Assets\textTriggers.cs" />
-     <Compile Include="Assets\textWrap.cs" />
+     <Compile Include="Assets\Scripts\textTriggers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
