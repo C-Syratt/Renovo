@@ -20,10 +20,9 @@ public class FPC : MonoBehaviour {
 	public bool canJump = false;
 	public playerState playState;
 
-	//public AudioClip jumpAud;
-	// jumpin and shit
+	[SerializeField] AudioClip[] jumpAud;
 
-	public Vector3 speed;
+	Vector3 speed;
 
 	public float moveSpeed = 5.0f;
 	public float jumpSpeed = 5.0f;
@@ -64,7 +63,7 @@ public class FPC : MonoBehaviour {
 				if (charC.isGrounded && Input.GetButtonDown ("Jump")) 
 				{
 					vertVelo = jumpSpeed;
-					//AudioSource.PlayClipAtPoint(jumpAud, gameObject.transform.position);
+					AudioSource.PlayClipAtPoint(jumpAud [Random.Range (0, jumpAud.Length)], gameObject.transform.position);
 				}
 			}
 
