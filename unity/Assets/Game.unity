@@ -1224,8 +1224,8 @@ Transform:
   m_PrefabInternal: {fileID: 1623764386}
   m_GameObject: {fileID: 93202452}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8.67604446, y: 8.67604256, z: 4.54800081}
+  m_LocalPosition: {x: 0, y: .206265062, z: 0}
+  m_LocalScale: {x: 12.9135637, y: 12.9135571, z: 6.76931524}
   m_Children: []
   m_Father: {fileID: 1851717804}
   m_RootOrder: 1
@@ -1274,13 +1274,13 @@ ParticleSystem:
   speed: 1
   randomSeed: 0
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
-  moveWithTransform: 1
+  moveWithTransform: 0
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: .569999993
+      scalar: .180000007
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1313,7 +1313,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .469999999
+      scalar: .74000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4711,7 +4711,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 1
-  m_Color: {r: .0588235259, g: .0497404821, b: .0497404821, a: 1}
+  m_Color: {r: .0220588446, g: .019301489, b: .019301489, a: 1}
   m_Intensity: .5
   m_Range: 10
   m_SpotAngle: 30
@@ -5214,7 +5214,7 @@ MonoBehaviour:
   player: {fileID: 263784072}
   torch: {fileID: 1851717800}
   puzzle2: {fileID: 0}
-  canJump: 1
+  canJump: 0
   playState: 0
   jumpAud:
   - {fileID: 8300000, guid: 3098f1c656cf2994fbf0514149e685ed, type: 3}
@@ -5252,6 +5252,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &269503226
 GameObject:
   m_ObjectHideFlags: 0
@@ -14348,7 +14349,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 973894316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .344003439, y: -1.7947489, z: 4.75864935}
+  m_LocalPosition: {x: -.171510935, y: -1.59893668, z: 4.75864935}
   m_LocalScale: {x: .0780928656, y: .0780928805, z: .0780928805}
   m_Children: []
   m_Father: {fileID: 2094683633}
@@ -25775,8 +25776,8 @@ Transform:
   m_PrefabInternal: {fileID: 1623764386}
   m_GameObject: {fileID: 1851717800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00918216538, y: .531271696, z: -.0144496066}
-  m_LocalScale: {x: 1.91335249, y: .365034193, z: 2.15069127}
+  m_LocalPosition: {x: -.00918216538, y: .446547896, z: -.0144496066}
+  m_LocalScale: {x: 1.46997952, y: .280446321, z: 1.65232027}
   m_Children:
   - {fileID: 1484170007}
   - {fileID: 93202453}
