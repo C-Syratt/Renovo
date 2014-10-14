@@ -64,20 +64,6 @@ public class DialPuzzle : MonoBehaviour
 
 	void ChangeUp()
 	{
-		if (selectedDial == dialList[2])
-		{
-			selectedDial = dialList [0];	
-			dialNum = 0;
-		}
-		else
-		{
-			selectedDial = dialList [dialNum + 1];
-			dialNum++;
-		}
-	}
-
-	void ChangeDown()
-	{
 		if (selectedDial == dialList[0])
 		{
 			selectedDial = dialList [2];	
@@ -90,9 +76,24 @@ public class DialPuzzle : MonoBehaviour
 		}
 	}
 
+	void ChangeDown()
+	{
+		if (selectedDial == dialList[2])
+		{
+			selectedDial = dialList [0];	
+			dialNum = 0;
+		}
+		else
+		{
+			selectedDial = dialList [dialNum + 1];
+			dialNum++;
+		}
+	}
+
 	void Win()
 	{
 		player.playState = FPC.playerState.grandFinale;
+		player.cam.changeView ();
 	}
 
 }

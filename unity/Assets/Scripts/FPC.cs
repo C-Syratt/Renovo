@@ -12,7 +12,7 @@ public class FPC : MonoBehaviour {
 
 
 	CharacterController charC;
-	[SerializeField]camScript cam;
+	[SerializeField]public camScript cam;
 
 	public GameObject player;
 	public GameObject torch;
@@ -110,7 +110,6 @@ public class FPC : MonoBehaviour {
 	void Win()
 	{
 		// Load the Level Again
-		cam.changeView ();
 		Application.LoadLevel(1);
 	}
 

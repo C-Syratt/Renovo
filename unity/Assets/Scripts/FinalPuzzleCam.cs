@@ -31,6 +31,9 @@ public class FinalPuzzleCam : MonoBehaviour {
 		finalCam.SetActive (false);
 		text[0].SetActive (false);
 		text[1].SetActive (false);
+		text[2].SetActive (true);
+		text[3].SetActive (true);
+		text[4].SetActive (true);
 	}
 
 

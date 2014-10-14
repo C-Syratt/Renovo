@@ -43,7 +43,7 @@ public class textTriggers : MonoBehaviour {
 			break;
 
 		case "End":
-			txt.DisplayText("You feel light head as the spell begins to work");
+			txt.DisplayText("You feel light headed as the spell begins to work");
 			break;
 
 
