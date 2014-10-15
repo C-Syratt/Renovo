@@ -31,7 +31,7 @@ public class textTriggers : MonoBehaviour {
 			break;
 
 		case "Strong Wind":
-			txt.DisplayText("A Magic field seems to repel light");
+			txt.DisplayText("A Magic field seems to dull light");
 			break;
 
 		case "Lift Spell":

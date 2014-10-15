@@ -13,11 +13,14 @@ public class MenuCam : MonoBehaviour {
 	void Start () 
 	{
 		newPos = mainPos;
+		Screen.lockCursor = false;
 	}
 	
 	void Update () 
 	{
 		transform.position = Vector3.MoveTowards(transform.position, newPos, camSpeed * Time.deltaTime);
+		if(Input.GetKeyDown(KeyCode.Escape))
+			Application.Quit();
 	}
 	
 	void MoveCam(string buttonPressed)

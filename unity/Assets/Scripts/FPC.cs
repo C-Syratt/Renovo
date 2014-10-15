@@ -16,6 +16,7 @@ public class FPC : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject torch;
+	public GameObject blindlight;
 	public GameObject puzzle2;
 	public bool canJump = false;
 	public playerState playState;
@@ -99,7 +100,8 @@ public class FPC : MonoBehaviour {
 			}
 		}
 		if(Input.GetKeyDown(KeyCode.Escape))
-			Application.Quit();
+			Application.LoadLevel(0);
+
 		
 	}
 
@@ -118,15 +120,18 @@ public class FPC : MonoBehaviour {
 	public void TorchOn()
 	{
 		torch.SetActive (true);
+		blindlight.SetActive (false);
 	}
 
 	public void TorchOff()
 	{
 		torch.SetActive (false);
+		blindlight.SetActive (true);
 	}
 	public void SecondPuzzle()
 	{
 		Destroy (puzzle2);
+		puzzle2.SendMessage("DeActivate");
 		TorchOn ();
 	}
 

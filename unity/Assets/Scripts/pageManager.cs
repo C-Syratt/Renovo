@@ -28,27 +28,27 @@ public class pageManager : MonoBehaviour {
 		{
 		case "Page One":
 			pageCamManager.TurnCamOn(1); // Tell pageCam.cs to turn on Camera One
-			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position, 0.5f);
 			break;
 		
 		case "Page Two":
 			pageCamManager.TurnCamOn(2); // Tell pageCam.cs to turn on Camera Two
-			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position, 0.5f);
 			break;
 
 		case "Page Three":
 			pageCamManager.TurnCamOn(3); // Tell pageCam.cs to turn on Camera Three
-			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position, 0.5f);
 			break;
 
 		case "Page Four":
 			pageCamManager.TurnCamOn(4); // Tell pageCam.cs to turn on Camera Four
-			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position, 0.5f);
 			break;
 
 		case "Page Five":
 			pageCamManager.TurnCamOn(5); // Tell pageCam.cs to turn on Camera Four
-			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position);
+			AudioSource.PlayClipAtPoint(voiceOver, gameObject.transform.position, 0.5f);
 			break;
 		}
 	}
