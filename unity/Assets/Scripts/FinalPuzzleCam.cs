@@ -5,6 +5,7 @@ public class FinalPuzzleCam : MonoBehaviour {
 
 	public GameObject finalCam;
 	public FPC player;
+	bool triggered = false;
 
 
 	public GameObject[] text;
@@ -20,10 +21,14 @@ public class FinalPuzzleCam : MonoBehaviour {
 
 	void OnTriggerEnter(Collider col)
 	{
-		finalCam.SetActive (true);
-		text[0].SetActive (true);
-		text[1].SetActive (true);
-		col.SendMessage("ActivateFinale");
+		if(triggered == false)
+		{
+			finalCam.SetActive (true);
+			text[0].SetActive (true);
+			text[1].SetActive (true);
+			col.SendMessage("ActivateFinale");
+			triggered = true;
+		}
 	}
 
 	void DisableCam()
