@@ -18,8 +18,8 @@ public class camScript : MonoBehaviour {
 	[SerializeField] float smooth;
 	
 	//Vector3 targV; // Target Vector
-	float minDistAway = 1.5f;
-	float maxDistAway = 2.5f;
+	float minDistUp = -0.3f;
+	float maxDistUp = 1f;
 	float zoomAmount;
 
 	public camView view;
@@ -54,8 +54,8 @@ public class camScript : MonoBehaviour {
 //		vertRot -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 //		vertRot = Mathf.Clamp (vertRot, -upDownRange, upDownRange);
 
-		distanceAway += -Input.GetAxis ("Mouse ScrollWheel");
-		distanceAway = Mathf.Clamp (distanceAway, minDistAway, maxDistAway);
+		distanceUp += -Input.GetAxis ("Mouse ScrollWheel");
+		distanceUp = Mathf.Clamp (distanceUp, minDistUp, maxDistUp);
 
 		camTarg = follow.position + follow.up * distanceUp - follow.forward * distanceAway;
 		WallColl(follow.position, ref camTarg);
