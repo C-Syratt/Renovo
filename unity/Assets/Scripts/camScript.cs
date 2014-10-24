@@ -70,8 +70,7 @@ public class camScript : MonoBehaviour {
 	{
 		gameObject.GetComponent<Camera>().enabled = false;
 	}
-
-
+	
 	public void changeView()
 	{
 		if (view == camView.thirdPerson)
