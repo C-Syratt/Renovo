@@ -65,7 +65,11 @@
      <Compile Include="Assets\Sky FX Pack\Scripts\RayBehavior.cs" />
      <Compile Include="Assets\Sky FX Pack\Scripts\RotateBehaviour.cs" />
      <Compile Include="Assets\Sky FX Pack\Scripts\ScrollBehaviour.cs" />
+     <Compile Include="Assets\torch\scene\script\TorchSlider.cs" />
+     <Compile Include="Assets\torch\scene\script\Torchslider2.cs" />
+     <Compile Include="Assets\torch\scripts\Torchelight.cs" />
      <None Include="Assets\Medieval_House\Info.txt" />
+     <None Include="Assets\torch\readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
