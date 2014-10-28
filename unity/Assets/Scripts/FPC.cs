@@ -14,6 +14,7 @@ public class FPC : MonoBehaviour {
 	CharacterController charC;
 	[SerializeField]public camScript cam;
 
+	public Transform mage;
 	public GameObject player;
 //	public GameObject torch;
 //	public GameObject blindlight;
@@ -65,6 +66,7 @@ public class FPC : MonoBehaviour {
 				{
 					vertVelo = jumpSpeed;
 					AudioSource.PlayClipAtPoint(jumpAud [Random.Range (0, jumpAud.Length)], gameObject.transform.position);
+					mage.animation.Play("Jumping");
 				}
 			}
 
@@ -80,16 +82,40 @@ public class FPC : MonoBehaviour {
 				audio.Stop();
 			}
 
-			if ((Input.GetButton("Horizontal") || Input.GetButton ("Vertical")) && !audio.isPlaying) 
+			if ( !Input.GetButton( "Horizontal" ) && !Input.GetButton( "Vertical" ) && charC.isGrounded) 
+			{
+				// Play Idle Anim
+				mage.animation.CrossFade("Idle");
+			}
+
+			if ((Input.GetButton("Horizontal") || Input.GetButton ("Vertical")) && !audio.isPlaying && charC.isGrounded) 
 			{
 				audio.Play ();
+				mage.animation.CrossFade("Running");
+
 			}
 			else if ( !Input.GetButton( "Horizontal" ) && !Input.GetButton( "Vertical" ) && audio.isPlaying 
 			         && charC.isGrounded)
 			{
 				audio.Stop(); // or Pause()
 			}
+
+			if(forwardSpeed < 0)
+			{
+				mage.animation.CrossFade("Back");
+			}
+			else if(sideSpeed > 0)
+			{
+				mage.animation.CrossFade("RightStep");
+			}
+			else if(sideSpeed < 0)
+			{
+				mage.animation.CrossFade("LeftStep");
+			}
 		}
+
+
+			
 
 		if(playState == playerState.grandFinale)
 		{
@@ -115,7 +141,7 @@ public class FPC : MonoBehaviour {
 		// Load the Level Again
 		Application.LoadLevel(1);
 	}
-
+	
 //	public void TorchOn()
 //	{
 //		torch.SetActive (true);

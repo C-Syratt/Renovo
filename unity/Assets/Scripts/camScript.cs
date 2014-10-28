@@ -19,7 +19,7 @@ public class camScript : MonoBehaviour {
 	
 	//Vector3 targV; // Target Vector
 	float minDistUp = -0.3f;
-	float maxDistUp = 1f;
+	float maxDistUp = 1.3f;
 	float zoomAmount;
 
 	public camView view;
