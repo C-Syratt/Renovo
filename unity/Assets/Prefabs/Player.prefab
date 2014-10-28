@@ -199,7 +199,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
-  m_LocalPosition: {x: -51.8422318, y: 23.8978767, z: 18.9771404}
+  m_LocalPosition: {x: 149.649155, y: -.00889015198, z: 33.53685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -456,7 +456,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1d522306a58b5244f8a1ca15f46220ba, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d6bcdba05453cbe4cb6c4500e10794f8, type: 3}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -546,16 +546,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   player: {fileID: 100004}
-  torch: {fileID: 100012}
-  blindlight: {fileID: 100008}
-  puzzle2: {fileID: 0}
-  canJump: 0
+  canJump: 1
   playState: 0
   jumpAud:
   - {fileID: 8300000, guid: 3098f1c656cf2994fbf0514149e685ed, type: 3}
   - {fileID: 8300000, guid: 9f504e3ccd960f4449ad7c445893ba78, type: 3}
   - {fileID: 8300000, guid: 2aaa1514aca84b349b515b5b0c33fb62, type: 3}
-  moveSpeed: 5
+  moveSpeed: 7
   jumpSpeed: 5
 --- !u!135 &13500000
 SphereCollider:
