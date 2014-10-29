@@ -37,7 +37,10 @@ public class FPC : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		Screen.lockCursor = true;
+		if(Application.loadedLevelName != "MainMenu")
+		{
+			Screen.lockCursor = true;
+		}
 		charC = GetComponent<CharacterController> ();
 		player = this.gameObject;
 
