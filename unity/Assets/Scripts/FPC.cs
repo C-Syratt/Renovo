@@ -7,7 +7,8 @@ public class FPC : MonoBehaviour {
 	{
 		game,
 		finale,
-		grandFinale
+		grandFinale,
+		Exit
 	}
 
 
@@ -51,14 +52,14 @@ public class FPC : MonoBehaviour {
 
 	void Update () 
 	{
-		if(playState == playerState.game || playState == playerState.grandFinale)
+		if(playState == playerState.game || playState == playerState.grandFinale || playState == playerState.Exit)
 		{
 			// increase velocity the longer you fall
 			if (!charC.isGrounded) 
 			{
 				vertVelo += Physics.gravity.y * Time.deltaTime;
 			}
-
+			//THIS SHIT IS A COMPLETE MESS!!!
 			// Jumping if the character is on the ground/player can not jump wile already in air
 			if (canJump == true) 
 			{
@@ -117,12 +118,19 @@ public class FPC : MonoBehaviour {
 
 			
 
-		if(playState == playerState.grandFinale)
+		if(playState == playerState.grandFinale || playState == playerState.Exit)
 		{
 			counter += Time.deltaTime;
 			if(counter > t)
 			{
-				Win();
+				if(playState == playerState.grandFinale)
+					Win();
+
+				if(playState == playerState.Exit)
+				{
+					// print("Exit");
+					Exit();
+				}
 			}
 		}
 		if(Input.GetKeyDown(KeyCode.Escape))
@@ -136,12 +144,25 @@ public class FPC : MonoBehaviour {
 		cam.changeView ();
 	}
 
+	public void ActivateExit()
+	{
+		print ("Exit");
+		playState = playerState.Exit;
+	}
+
 	void Win()
 	{
 		// Load the Level Again
 		Application.LoadLevel(1);
 	}
-	
+
+	void Exit()
+	{
+		// Load Main Meny
+		Application.LoadLevel(0);
+	}
+
+
 //	public void TorchOn()
 //	{
 //		torch.SetActive (true);

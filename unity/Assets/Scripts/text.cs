@@ -67,6 +67,12 @@ public class text : MonoBehaviour {
 		dispText.text = ResolveTextSize(txt,25);
 	}
 
+	public void DisplaySpecialText(string txt)
+	{
+		fadeIn = true;
+		dispText.text = ResolveTextSize(txt,30);
+	}
+
 	void FadeIn()
 	{
 		color.a += fadeSpeed;

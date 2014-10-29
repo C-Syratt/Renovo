@@ -46,6 +46,9 @@ public class textTriggers : MonoBehaviour {
 			txt.DisplayText("You feel light headed as the spell begins to work");
 			break;
 
+		case "Exit":
+			txt.DisplaySpecialText("You have resisted temptation. You are free from Renovo");
+			break;
 
 		}
 	}
