@@ -42,6 +42,10 @@ public class textTriggers : MonoBehaviour {
 			txt.DisplayText("The Door cannot be opened from here");
 			break;
 
+		case "Trolloll Fields":
+			txt.DisplayText("You shouldn't have come up here...");
+			break;
+
 		case "End":
 			txt.DisplayText("You feel light headed as the spell begins to work");
 			break;
