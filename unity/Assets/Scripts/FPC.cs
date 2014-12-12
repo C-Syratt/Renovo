@@ -3,6 +3,7 @@ using System.Collections;
 
 public class FPC : MonoBehaviour {
 
+	// Player's state, could/should have been made a game state in a GameManager
 	public enum playerState
 	{
 		game,
@@ -10,16 +11,12 @@ public class FPC : MonoBehaviour {
 		grandFinale,
 		Exit
 	}
-
-
+	
 	CharacterController charC;
-	[SerializeField]public camScript cam;
+	public camScript cam;
 
 	public Transform mage;
 	public GameObject player;
-//	public GameObject torch;
-//	public GameObject blindlight;
-//	public GameObject puzzle2;
 	public bool canJump = false;
 	public playerState playState;
 
@@ -34,7 +31,6 @@ public class FPC : MonoBehaviour {
 	float t = 5;
 	float vertVelo = 0;
 
-	// Use this for initialization
 	void Start () 
 	{
 		if(Application.loadedLevelName != "MainMenu")
@@ -45,7 +41,6 @@ public class FPC : MonoBehaviour {
 		player = this.gameObject;
 
 		playState = playerState.game;
-//		puzzle2 = GameObject.Find("Puzzle2Trigger");
 	}
 
 	public void CanJump()
@@ -53,8 +48,14 @@ public class FPC : MonoBehaviour {
 		canJump = true;
 	}
 
+	/* !!WARNING!!
+	 * The following code is a mess and should have been sorted into indiviual functions 
+	 * Also because this script was adpated from a First Person Controller Script (FPC)
+	 * and a lot of messing about trying to do different things/intergrate animations
+	 */
 	void Update () 
 	{
+		// if player is in Game/Grandfinale/Exit, they can move around
 		if(playState == playerState.game || playState == playerState.grandFinale || playState == playerState.Exit)
 		{
 			// increase velocity the longer you fall
@@ -62,8 +63,8 @@ public class FPC : MonoBehaviour {
 			{
 				vertVelo += Physics.gravity.y * Time.deltaTime;
 			}
-			//THIS SHIT IS A COMPLETE MESS!!!
-			// Jumping if the character is on the ground/player can not jump wile already in air
+
+			// Jumping if the character is on the ground/player can not jump while already in air
 			if (canJump == true) 
 			{
 				if (charC.isGrounded && Input.GetButtonDown ("Jump")) 
@@ -88,69 +89,70 @@ public class FPC : MonoBehaviour {
 
 			if ( !Input.GetButton( "Horizontal" ) && !Input.GetButton( "Vertical" ) && charC.isGrounded) 
 			{
-				// Play Idle Anim
+				// Play Idle Anim when no buttons(movement) are pressed and player on the ground
 				mage.animation.CrossFade("Idle");
 			}
 
 			if ((Input.GetButton("Horizontal") || Input.GetButton ("Vertical")) && !audio.isPlaying && charC.isGrounded) 
 			{
+				// play footstep(Audio) and Running(Animation) if player is on the ground and moving(buttons pressed)
 				audio.Play ();
 				mage.animation.CrossFade("Running");
-
 			}
 			else if ( !Input.GetButton( "Horizontal" ) && !Input.GetButton( "Vertical" ) && audio.isPlaying 
 			         && charC.isGrounded)
 			{
-				audio.Stop(); // or Pause()
+				audio.Stop(); // stop playing footstep(audio) is player is standing still
 			}
 
 			if(forwardSpeed < 0)
 			{
+				// Player backpedal(animation) if player is moving backwards
 				mage.animation.CrossFade("Back");
 			}
 			else if(sideSpeed > 0)
 			{
+				// Play RightStep(animation) if player is moving Right
 				mage.animation.CrossFade("RightStep");
 			}
 			else if(sideSpeed < 0)
 			{
+				// Play RightStep(animation) if player is moving Left
 				mage.animation.CrossFade("LeftStep");
 			}
 		}
 
-
-			
-
+		// if final puzzle is completed/player finds exit begin time out (5s)
 		if(playState == playerState.grandFinale || playState == playerState.Exit)
 		{
 			counter += Time.deltaTime;
 			if(counter > t)
 			{
 				if(playState == playerState.grandFinale)
+				{
 					Win();
+				}
 
 				if(playState == playerState.Exit)
 				{
-					// print("Exit");
 					Exit();
 				}
 			}
 		}
 		if(Input.GetKeyDown(KeyCode.Escape))
-			Application.LoadLevel(0);
+			Application.LoadLevel(0); // return to main menu
 		
 	}
 
 	public void ActivateFinale()
 	{
-		playState = playerState.finale;
+		playState = playerState.finale; // final puzzle state
 		cam.changeView ();
 	}
 
 	public void ActivateExit()
 	{
-		print ("Exit");
-		playState = playerState.Exit;
+		playState = playerState.Exit; // when player finds secret exit
 	}
 
 	void Win()
@@ -161,27 +163,8 @@ public class FPC : MonoBehaviour {
 
 	void Exit()
 	{
-		// Load Main Meny
+		// Load Main Menu
 		Application.LoadLevel(0);
 	}
-
-
-//	public void TorchOn()
-//	{
-//		torch.SetActive (true);
-//		blindlight.SetActive (false);
-//	}
-//
-//	public void TorchOff()
-//	{
-//		torch.SetActive (false);
-//		blindlight.SetActive (true);
-//	}
-//	public void SecondPuzzle()
-//	{
-//		Destroy (puzzle2);
-//		puzzle2.SendMessage("DeActivate");
-//		TorchOn ();
-//	}
 
 }

@@ -3,8 +3,14 @@ using System.Collections;
 
 public class text : MonoBehaviour {
 
-	public TextMesh dispText;
+	  /*
+		THE MAJORITY OF THIS SCRIPT IS NOT MY WORK,
+		HOWEVER I INCLUDED IT ANYWAY AS IT WAS IN THE FINAL BUILD
+		(I point out which sections I wrote, any other than those is not my work)
+	  */
 
+
+	public TextMesh dispText;
 
 	[SerializeField] bool fadeIn = false;
 	[SerializeField] bool maxFadeIn = false;
@@ -61,13 +67,13 @@ public class text : MonoBehaviour {
 		}
 	}
 	
-	public void DisplayText(string txt)
+	public void DisplayText(string txt) //<- I wrote this Function
 	{
 		fadeIn = true;
 		dispText.text = ResolveTextSize(txt,25);
 	}
 
-	public void DisplaySpecialText(string txt)
+	public void DisplaySpecialText(string txt) // <- and this one
 	{
 		fadeIn = true;
 		dispText.text = ResolveTextSize(txt,30);

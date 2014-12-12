@@ -3,24 +3,12 @@ using System.Collections;
 
 public class EndScript : MonoBehaviour {
 
-
+	// for the player finding the exit
 	void OnTriggerEnter (Collider other)
 	{
 		if (other.name == "Player") 
 		{
 			other.SendMessage("ActivateExit");
 		}
-	}
-
-
-	// Use this for initialization
-	void Start () 
-	{
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

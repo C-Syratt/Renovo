@@ -3,18 +3,14 @@ using System.Collections;
 
 public class pageCam : MonoBehaviour 
 {
-	public static pageCam pc;
+	// this script manages the camera's for when the player "reads" a page they found
+	
 	public GameObject camOne;
 	public GameObject camTwo;
 	public GameObject camThree;
 	public GameObject camFour;
 	public GameObject camFive;
 	
-	void Start()
-	{
-		pc = gameObject.GetComponent<pageCam> ();
-	}
-
 	public void TurnCamOn(int camNum)
 	{
 		switch (camNum) 

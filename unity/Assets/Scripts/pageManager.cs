@@ -3,8 +3,10 @@ using System.Collections;
 
 public class pageManager : MonoBehaviour {
 
+
+
 	public pageCam pageCamManager;
-	//public AudioClip voiceOver;
+	//public AudioClip voiceOver; <- removed from final build
 
  	void Start()
 	{
@@ -14,7 +16,7 @@ public class pageManager : MonoBehaviour {
 
 	void OnTriggerEnter()
 	{
-		triggerFunc (gameObject.name);
+		triggerFunc (gameObject.name); //feed the trigger functions the name of the trigger object
 	}
 
 	void OnTriggerExit()

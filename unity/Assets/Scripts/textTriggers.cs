@@ -3,11 +3,15 @@ using System.Collections;
 
 public class textTriggers : MonoBehaviour {
 
+	/*
+		This Script is attached to multiple triggers
+	 */
+
 	[SerializeField] text txt;
 
 	void OnTriggerEnter(Collider other)
 	{
-		if (other.name == "Player") 
+		if (other.name == "Player") // if player enters the trigger
 		{
 			ChangeText();
 		}
@@ -15,6 +19,9 @@ public class textTriggers : MonoBehaviour {
 
 	void ChangeText()
 	{
+		// this function changes the text on the 3d text attached to the player camera
+		// by passing a string into the text.cs script
+
 		switch(gameObject.name)
 		{
 		case "Feel Weak":
